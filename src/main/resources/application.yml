@@ -1,0 +1,21 @@
+server:
+  port: 8090 #端口
+
+spring:
+  application:
+    name: payment-demo #应用的名字
+
+  jackson:  #设置时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/payment_demo?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+ #让应用程序在运行的时候也能够找到xml文件
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/www/payment_demo/mapper/xml/*.xml
